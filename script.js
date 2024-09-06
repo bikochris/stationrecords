@@ -18,53 +18,53 @@ const viewStationHistoryButton = document.getElementById('viewStationHistory');
 const data = {
     Kigali: {
         Gasabo: {
-            ARG: ['Ndera ARG','Rubungo','Jali','Gikomero'],
+            ARG: ['Ndera ARG', 'Rubungo', 'Jali', 'Gikomero'],
             MRG: ['Rusororo MRG', 'Kabuga MRG'],
             AWS: ['Rusororo AWS', 'Kabuga AWS'],
             ASS: ['Rusororo ASS', 'Kabuga ASS']
         },
         Nyarugenge: {
-            ARG: ['Rugunga', 'Kigali Sector','Gikomero','Butamwa/Mageragere'],
+            ARG: ['Rugunga', 'Kigali Sector', 'Gikomero', 'Butamwa/Mageragere'],
             MRG: ['Gitega MRG', 'Kimisagara MRG'],
             AWS: ['Gitega AWS', 'Kimisagara AWS'],
             ASS: ['Gitega ASS', 'Kimisagara ASS']
         },
         Kicukiro: {
-            ARG: ['Masaka ARG','Rubirizi','Kanombe','Gahanga'],
+            ARG: ['Masaka ARG', 'Rubirizi', 'Kanombe', 'Gahanga'],
             MRG: ['Masaka MRG', 'Masaka MRG'],
             AWS: ['Masaka AWS', 'Masaka AWS']
         }
     },
     East: {
         Rwamagana: {
-            ARG: ['Nzige ARG', 'Musha ARG','Bicumbi','Gishari','Mwulire'],
+            ARG: ['Nzige ARG', 'Musha ARG', 'Bicumbi', 'Gishari', 'Mwulire'],
             MRG: ['Nzige MRG', 'Musha MRG'],
             AWS: ['Rwamagana'],
         },
         Kayonza: {
-            ARG: ['Kabarondo ARG', 'Rukarara','Akagera-Cyarubare','Ganini','Kiziguro','Mukarange','Rukara(PNILP)','Murama','Mwiri','Ndego','Rwinkwavu'],
+            ARG: ['Kabarondo ARG', 'Rukarara', 'Akagera-Cyarubare', 'Ganini', 'Kiziguro', 'Mukarange', 'Rukara(PNILP)', 'Murama', 'Mwiri', 'Ndego', 'Rwinkwavu'],
             MRG: ['Kabarondo MRG', 'Kabarondo MRG'],
             AWS: ['Kawangire AWS', 'Kawangire AWS'],
             ASS: ['Kawangire ASS']
         },
         Ngoma: {
-            ARG: ['Zaza ARG', 'Sake ARG','Mutenderi','Jarama','Murama'],
+            ARG: ['Zaza ARG', 'Sake ARG', 'Mutenderi', 'Jarama', 'Murama'],
             MRG: ['Zaza MRG', 'Kazo MRG'],
             AWS: ['Kazo AWS'],
             ASS: ['Kazo ASS']
         },
         Kirehe: {
-            ARG: ['Nyamugali ARG', 'Musaza','Kirehe','Nyarubuye','Gahara','Bukora'],
+            ARG: ['Nyamugali ARG', 'Musaza', 'Kirehe', 'Nyarubuye', 'Gahara', 'Bukora'],
             MRG: ['Nyarubuye MRG'],
             AWS: ['Nasho-Mphanga AWS', 'Kazo AWS'],
         },
         Gatsibo: {
-            ARG: ['Gasange ARG', 'Kiziguro ARG','Muhura','Nyagahanga','Rwimbogo','Ngarama','Kabarore'],
+            ARG: ['Gasange ARG', 'Kiziguro ARG', 'Muhura', 'Nyagahanga', 'Rwimbogo', 'Ngarama', 'Kabarore'],
             MRG: ['Zaza MRG', 'Kazo MRG'],
             AWS: ['Zaza AWS', 'Kazo AWS'],
         },
         Nyagatare: {
-            ARG: ['Nyakiga-karama, Gabiro ARG', 'Kagitumba ARG','Karangazi','Rwempasha'],
+            ARG: ['Nyakiga-karama', 'Gabiro ARG', 'Kagitumba ARG', 'Karangazi', 'Rwempasha'],
             MRG: ['Zaza MRG', 'Kazo MRG'],
             AWS: ['Nyagatare AWS'],
             ASS: ['Nyagatare']
@@ -73,34 +73,34 @@ const data = {
             ARG: ['Ruhuha ARG', 'Kazo ARG'],
             MRG: ['Ruhuha'],
             AWS: ['Mayange AWS', 'Gahanga AWS'],
-            ASS: ['Juru', 'Karama','Nyamata']
+            ASS: ['Juru', 'Karama', 'Nyamata']
         }
     },
     North: {
         Gicumbi: {
-            ARG: ['Rwesero ARG','Cyumba','Muko','Kabeza/Nyamiyaga','Mulindi-usine','Bwisige'],
+            ARG: ['Rwesero ARG', 'Cyumba', 'Muko', 'Kabeza/Nyamiyaga', 'Mulindi-usine', 'Bwisige'],
             MRG: ['Rusororo MRG', 'Kabuga MRG'],
             AWS: ['Gicumbi AWS'],
             ASS: ['Gicumbi']
         },
         Gakenye: {
-            ARG: ['Janja', 'Gakenye District','Cyabongo','Muyongwe','Minazi','Nemba','Ruli','Rushashi'],
+            ARG: ['Janja', 'Gakenye District', 'Cyabongo', 'Muyongwe', 'Minazi', 'Nemba', 'Ruli', 'Rushashi'],
             MRG: ['Gitega MRG', 'Kimisagara MRG'],
             AWS: ['Gitega AWS', 'Kimisagara AWS'],
         },
         Musanze: {
-            ARG: ['Remera ARG','Shyingiro','Rwaza','Nyange','Musanze','Kinigi'],
+            ARG: ['Remera ARG', 'Shyingiro', 'Rwaza', 'Nyange', 'Musanze', 'Kinigi'],
             MRG: ['Masaka MRG', 'Masaka MRG'],
             AWS: ['Musanze-Aero'],
-            ASS: ['Busogo','Musanze-Aero']
+            ASS: ['Busogo', 'Musanze-Aero']
         },
         Rulindo: {
-            ARG: ['Rusiga','Rulindo Parich','Rulindo district','Rukozo','Mugambazi','Kinihira','Cyinzuzi','Rutongo'],
+            ARG: ['Rusiga', 'Rulindo Parich', 'Rulindo district', 'Rukozo', 'Mugambazi', 'Kinihira', 'Cyinzuzi', 'Rutongo'],
             MRG: ['Masaka MRG', 'Masaka MRG'],
             AWS: ['Masaka AWS', 'Masaka AWS'],
         },
         Burera: {
-            ARG: ['Rwerere ','Ruhende','Ntaruka','Kinoni','Kagogo','Butaro','Bungwe'],
+            ARG: ['Rwerere', 'Ruhende', 'Ntaruka', 'Kinoni', 'Kagogo', 'Butaro', 'Bungwe'],
             MRG: ['Masaka MRG', 'Masaka MRG'],
             AWS: ['Masaka AWS', 'Masaka AWS'],
         }
@@ -108,14 +108,33 @@ const data = {
 };
 
 const instruments = {
-    ARG: ['Rain Gauge Sensor', 'Regulator', 'Solar Panel', 'Support', 'Water Collector', 'Data Logger','Battery'],
+    ARG: ['Rain Gauge Sensor', 'Regulator', 'Solar Panel', 'Support', 'Water Collector', 'Data Logger', 'Battery'],
     MRG: ['Support', 'Water Collector', 'Measuring Cylinder'],
-    AWS: ['Anemometer', 'Barometer', 'Rain Gauge Sensor', 'Solar Panel', 'Data Logger','Battery','Air-Humidity sensor','Global solar radiation sensor','Direect solar radiation sensor','Wind vane','Soil temperature sensor','soil moisture sensor','lightening detector'],
-    ASS: ['Hygrometer', 'Thermometer', 'Barograph','manual rain gauge', 'Soil Thermometer at 10 cm', 'Soil Thermometer at 20 cm','Soil Thermometer at 50 cm','Soil Thermometer at 100 cm','Digital thermometer', 'Maximun and minimum thermometer','Minimum Glass thermometer','evaporation piche','evaporation pan','hook gauge','Sunshine recorder','Stevenson screen','psychrometer','Analogy minimum thermometer']
+    AWS: ['Anemometer', 'Barometer', 'Rain Gauge Sensor', 'Solar Panel', 'Data Logger', 'Battery', 'Air-Humidity sensor', 'Global solar radiation sensor', 'Direct solar radiation sensor', 'Wind vane', 'Soil temperature sensor', 'Soil moisture sensor', 'Lightning detector'],
+    ASS: ['Hygrometer', 'Thermometer', 'Barograph', 'Manual rain gauge', 'Soil Thermometer at 10 cm', 'Soil Thermometer at 20 cm', 'Soil Thermometer at 50 cm', 'Soil Thermometer at 100 cm', 'Digital thermometer', 'Maximum and minimum thermometer', 'Minimum Glass thermometer', 'Evaporation piche', 'Evaporation pan', 'Hook gauge', 'Sunshine recorder', 'Stevenson screen', 'Psychrometer', 'Analogy minimum thermometer']
 };
 
-// Store maintenance records for each station
-const stationMaintenanceRecords = {};
+// Map abbreviations to full names
+const stationTypeFullNames = {
+    ARG: 'Automatic Rain Gauge',
+    MRG: 'Manual Rain Gauge',
+    AWS: 'Automatic Weather Station',
+    ASS: 'Agrometeorological Station'
+};
+
+// Load existing records from localStorage
+const loadRecordsFromStorage = () => {
+    const storedRecords = localStorage.getItem('stationMaintenanceRecords');
+    return storedRecords ? JSON.parse(storedRecords) : {};
+};
+
+// Save records to localStorage
+const saveRecordsToStorage = (records) => {
+    localStorage.setItem('stationMaintenanceRecords', JSON.stringify(records));
+};
+
+// Initialize records
+let stationMaintenanceRecords = loadRecordsFromStorage();
 
 // Event Listeners
 provinceSelect.addEventListener('change', () => {
@@ -151,25 +170,10 @@ districtSelect.addEventListener('change', () => {
 
     if (district) {
         const stationTypes = Object.keys(data[province][district]);
-        stationTypes.forEach(type => {
+        stationTypes.forEach(stationType => {
             const option = document.createElement('option');
-            option.value = type;
-            switch(type) {
-                case 'ARG':
-                    option.textContent = 'Automatic Rain Gauge';
-                    break;
-                case 'MRG':
-                    option.textContent = 'Manual Rain Gauge';
-                    break;
-                case 'AWS':
-                    option.textContent = 'Automatic Weather Station';
-                    break;
-                case 'ASS':
-                    option.textContent = 'Agro-Synoptic Weather Station';
-                    break;
-                default:
-                    option.textContent = type;
-            }
+            option.value = stationType;
+            option.textContent = stationTypeFullNames[stationType] || stationType;
             stationTypeSelect.appendChild(option);
         });
     }
@@ -197,17 +201,13 @@ stationTypeSelect.addEventListener('change', () => {
 });
 
 stationNameSelect.addEventListener('change', () => {
-    const province = provinceSelect.value;
-    const district = districtSelect.value;
     const stationType = stationTypeSelect.value;
     const stationName = stationNameSelect.value;
     
     if (stationName) {
-        // Show the maintenance form and history button
         maintenanceForm.classList.remove('hidden');
         viewStationHistoryButton.classList.remove('hidden');
         
-        // Populate instruments dropdown
         instrumentSelect.innerHTML = '<option value="">--Select Instrument--</option>';
         instruments[stationType].forEach(instrument => {
             const option = document.createElement('option');
@@ -248,6 +248,9 @@ saveMaintenanceButton.addEventListener('click', () => {
     }
 
     stationMaintenanceRecords[selectedStation].unshift(record);
+
+    // Save updated records to localStorage
+    saveRecordsToStorage(stationMaintenanceRecords);
 
     // Display the updated records
     displayStationMaintenanceRecords(selectedStation);

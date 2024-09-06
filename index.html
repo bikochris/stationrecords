@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Station Maintenance Records</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Station Maintenance Records</h1>
+
+    <label for="province">Select Province:</label>
+    <select id="province">
+        <option value="">--Select Province--</option>
+        <option value="Kigali">Kigali</option>
+        <option value="East">East</option>
+        <option value="North">North</option>
+    </select>
+
+    <label for="district">Select District:</label>
+    <select id="district">
+        <option value="">--Select District--</option>
+    </select>
+
+    <label for="stationType">Select Type of Station:</label>
+    <select id="stationType">
+        <option value="">--Select Type of Station--</option>
+    </select>
+
+    <label for="stationName">Select Station Name:</label>
+    <select id="stationName">
+        <option value="">--Select Station Name--</option>
+    </select>
+
+    <div id="maintenanceForm" class="hidden">
+        <h2>Record Maintenance</h2>
+        <label for="instrument">Select Instrument:</label>
+        <select id="instrument">
+            <option value="">--Select Instrument--</option>
+        </select>
+
+        <label for="maintenanceDate">Maintenance Date:</label>
+        <input type="date" id="maintenanceDate">
+
+        <label for="recommendedDate">Recommended Date:</label>
+        <input type="date" id="recommendedDate">
+
+        <label for="performedWork">Performed Work:</label>
+        <textarea id="performedWork"></textarea>
+
+        <label for="uploadDocument">Upload Document:</label>
+        <input type="file" id="uploadDocument">
+
+        <button id="saveMaintenance">Save Maintenance Record</button>
+    </div>
+
+    <button id="viewStationHistory" class="hidden">View Station History</button>
+
+    <div id="maintenanceTableWrapper" class="hidden">
+        <h2>Maintenance Records</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Instrument</th>
+                    <th>Maintenance Date</th>
+                    <th>Performed Work</th>
+                    <th>Recommended Date</th>
+                    <th>Document</th>
+                </tr>
+            </thead>
+            <tbody id="maintenanceRecords">
+                <!-- Records will be populated here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

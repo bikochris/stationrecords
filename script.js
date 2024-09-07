@@ -243,16 +243,19 @@ saveMaintenanceButton.addEventListener('click', () => {
         documentFile: documentFile ? URL.createObjectURL(documentFile) : null
     };
 
-    if (!stationMaintenanceRecords[selectedStation]) {
-        stationMaintenanceRecords[selectedStation] = [];
+    if (editingRecordIndex !== null) {
+        // Update existing record
+        stationMaintenanceRecords[selectedStation][editingRecordIndex] = record;
+        editingRecordIndex = null; // Reset after saving
+    } else {
+        // Add new record
+        if (!stationMaintenanceRecords[selectedStation]) {
+            stationMaintenanceRecords[selectedStation] = [];
+        }
+        stationMaintenanceRecords[selectedStation].unshift(record);
     }
 
-    stationMaintenanceRecords[selectedStation].unshift(record);
-
-    // Save updated records to localStorage
     saveRecordsToStorage(stationMaintenanceRecords);
-
-    // Display the updated records
     displayStationMaintenanceRecords(selectedStation);
 
     // Clear the form
@@ -266,7 +269,7 @@ function displayStationMaintenanceRecords(station) {
     maintenanceTableBody.innerHTML = ''; // Clear the current records
     const records = stationMaintenanceRecords[station] || [];
     
-    records.forEach(record => {
+    records.forEach((record, index) => {
         const newRow = document.createElement('tr');
 
         const instrumentCell = document.createElement('td');
@@ -297,8 +300,40 @@ function displayStationMaintenanceRecords(station) {
         }
         newRow.appendChild(documentCell);
 
+        const actionsCell = document.createElement('td');
+        const editButton = document.createElement('button');
+        editButton.textContent = 'Edit';
+        editButton.addEventListener('click', () => editRecord(station, index));
+        actionsCell.appendChild(editButton);
+
+        const removeButton = document.createElement('button');
+        removeButton.textContent = 'Remove';
+        removeButton.addEventListener('click', () => removeRecord(station, index));
+        actionsCell.appendChild(removeButton);
+
+        newRow.appendChild(actionsCell);
         maintenanceTableBody.appendChild(newRow);
     });
+}
+
+// Function to edit a record
+function editRecord(station, index) {
+    const record = stationMaintenanceRecords[station][index];
+
+    instrumentSelect.value = record.instrument;
+    maintenanceDateInput.value = record.maintenanceDate;
+    recommendedDateInput.value = record.recommendedDate;
+    performedWorkInput.value = record.performedWork;
+    editingRecordIndex = index; // Set the index of the record being edited
+
+    maintenanceForm.classList.remove('hidden'); // Ensure form is visible
+}
+
+// Function to remove a record
+function removeRecord(station, index) {
+    stationMaintenanceRecords[station].splice(index, 1);
+    saveRecordsToStorage(stationMaintenanceRecords);
+    displayStationMaintenanceRecords(station);
 }
 
 viewStationHistoryButton.addEventListener('click', () => {
